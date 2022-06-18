@@ -1,4 +1,4 @@
-package com.springbatch.jdbcpagingreaderjob;
+package com.springbatch.processadorvalidacao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.springbatch.jdbcpagingreaderjob.job;
+package com.springbatch.processadorvalidacao.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -10,20 +10,21 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class JdbcCursorReaderJobConfig {
+public class ProcessadorValidacaoJobConfig {
 
     private JobBuilderFactory jobBuilderFactory;
 
-    public JdbcCursorReaderJobConfig(JobBuilderFactory jobBuilderFactory) {
+    public ProcessadorValidacaoJobConfig(JobBuilderFactory jobBuilderFactory) {
         this.jobBuilderFactory = jobBuilderFactory;
     }
 
     @Bean
-    public Job jdbcPagingJob(Step jdbcPagingReaderJob){
-        return this.jobBuilderFactory
-                .get("jdbcPagingJob")
-                .start(jdbcPagingReaderJob)
+    public Job processadorValidacaoJob(Step processadorValidacaoStep) {
+        return jobBuilderFactory
+                .get("processadorValidacaoJob")
+                .start(processadorValidacaoStep)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
+
 }

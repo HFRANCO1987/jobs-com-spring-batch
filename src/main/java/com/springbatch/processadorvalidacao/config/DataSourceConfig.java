@@ -1,4 +1,4 @@
-package com.springbatch.jdbcpagingreaderjob.config;
+package com.springbatch.processadorvalidacao.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
