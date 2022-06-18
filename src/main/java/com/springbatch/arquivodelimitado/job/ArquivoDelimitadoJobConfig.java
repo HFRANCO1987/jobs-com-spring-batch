@@ -1,28 +1,27 @@
-package com.springbatch.arquivolargurafixa.job;
+package com.springbatch.arquivodelimitado.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
-import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class ArquivoLarguraFixaJobConfig {
+public class ArquivoDelimitadoJobConfig {
 
     private JobBuilderFactory jobBuilderFactory;
 
-    public ArquivoLarguraFixaJobConfig(JobBuilderFactory jobBuilderFactory) {
+    public ArquivoDelimitadoJobConfig(JobBuilderFactory jobBuilderFactory) {
         this.jobBuilderFactory = jobBuilderFactory;
     }
 
     @Bean
-    public Job arquivoLarguraFixJob(Step leituraArquivoLarguraFixaStep){
+    public Job arquivoDelimitadoJob(Step leituraArquivoDelimitadoStep){
         return this.jobBuilderFactory
-                .get("arquivoLarguraFixaJob")
-                .start(leituraArquivoLarguraFixaStep)
+                .get("arquivoDelimitadoJob")
+                .start(leituraArquivoDelimitadoStep)
                 //.incrementer(new RunIdIncrementer())
                 .build();
     }

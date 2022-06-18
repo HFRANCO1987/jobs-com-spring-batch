@@ -1,4 +1,4 @@
-package com.springbatch.arquivolargurafixa.dominio;
+package com.springbatch.arquivodelimitado.dominio;
 
 public class Cliente {
 
