@@ -1,4 +1,4 @@
-package com.springbatch.arquivodelimitado.dominio;
+package com.springbatch.arquivomultiplosformatos.dominio;
 
 public class Cliente {
 

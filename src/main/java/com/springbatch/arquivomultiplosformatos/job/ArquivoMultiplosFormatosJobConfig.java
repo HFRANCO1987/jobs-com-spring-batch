@@ -1,4 +1,4 @@
-package com.springbatch.arquivodelimitado.job;
+package com.springbatch.arquivomultiplosformatos.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -9,19 +9,19 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class ArquivoDelimitadoJobConfig {
+public class ArquivoMultiplosFormatosJobConfig {
 
     private JobBuilderFactory jobBuilderFactory;
 
-    public ArquivoDelimitadoJobConfig(JobBuilderFactory jobBuilderFactory) {
+    public ArquivoMultiplosFormatosJobConfig(JobBuilderFactory jobBuilderFactory) {
         this.jobBuilderFactory = jobBuilderFactory;
     }
 
     @Bean
-    public Job arquivoDelimitadoJob(Step leituraArquivoDelimitadoStep){
+    public Job arquivoMultiplosFormatosJob(Step leituraArquivoMultiplosFormatosStep){
         return this.jobBuilderFactory
-                .get("arquivoDelimitadoJob")
-                .start(leituraArquivoDelimitadoStep)
+                .get("arquivoMultiplosFormatosJob")
+                .start(leituraArquivoMultiplosFormatosStep)
                 //.incrementer(new RunIdIncrementer())
                 .build();
     }
