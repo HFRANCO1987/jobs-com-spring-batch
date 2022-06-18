@@ -37,18 +37,6 @@ public class BatchConfig {
                 .build();
     }
 
-//    public Step imprimeOlaStep(){
-//        return stepBuilderFactory
-//                .get("imprimeOlaStep")
-//                .tasklet(new Tasklet() {
-//                    @Override
-//                    public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-//                        System.out.println("Olá, mundo!");
-//                        return RepeatStatus.FINISHED;
-//                    }
-//                }).build();
-//    }
-
     public Step imprimeOlaStep(){
         return stepBuilderFactory
                 .get("imprimeOlaStep")
@@ -67,7 +55,5 @@ public class BatchConfig {
             }
         };
     }
-
-
 
 }
