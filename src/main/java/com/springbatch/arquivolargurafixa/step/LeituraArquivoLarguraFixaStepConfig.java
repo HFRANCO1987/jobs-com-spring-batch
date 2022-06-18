@@ -21,7 +21,7 @@ public class LeituraArquivoLarguraFixaStepConfig {
     public Step leituraArquivoLarguraFixaStep(ItemReader<Cliente> leituraArquivoLarguraFixaReader, ItemWriter<Cliente> leituraArquivoLarguraFixaWriter){
         return this.stepBuilderFactory
                 .get("leituraArquivoLarguraFixaStep")
-                .<Cliente, Cliente>chunk(1)
+                .<Cliente, Cliente>chunk(1) //tamanho do chunck controle o número de transações
                 .reader(leituraArquivoLarguraFixaReader)
                 .writer(leituraArquivoLarguraFixaWriter)
                 .build();
