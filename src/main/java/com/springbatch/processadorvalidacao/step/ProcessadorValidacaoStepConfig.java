@@ -6,6 +6,7 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,17 +20,18 @@ public class ProcessadorValidacaoStepConfig {
     }
 
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     @Bean
-    public Step processadorValidacaoStep(
-            ItemReader<Cliente> processadorValidacaoReader,
-            ItemProcessor<Cliente, Cliente> processadorValidacaoProcessor,
-            ItemWriter<Cliente> processadorValidacaoWriter) {
+    public Step processadorClassifierStep(
+            FlatFileItemReader processadorClassifierReader,
+            ItemProcessor processadorClassifierProcessor,
+            ItemWriter processadorClassifierWriter) {
         return stepBuilderFactory
-                .get("processadorValidacaoStep")
-                .<Cliente, Cliente>chunk(1)
-                .reader(processadorValidacaoReader)
-                .processor(processadorValidacaoProcessor)
-                .writer(processadorValidacaoWriter)
+                .get("processadorClassifierStep")
+                .chunk(1)
+                .reader(processadorClassifierReader)
+                .processor(processadorClassifierProcessor)
+                .writer(processadorClassifierWriter)
                 .build();
     }
 

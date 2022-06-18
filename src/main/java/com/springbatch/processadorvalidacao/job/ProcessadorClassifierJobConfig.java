@@ -10,19 +10,19 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class ProcessadorValidacaoJobConfig {
+public class ProcessadorClassifierJobConfig {
 
     private JobBuilderFactory jobBuilderFactory;
 
-    public ProcessadorValidacaoJobConfig(JobBuilderFactory jobBuilderFactory) {
+    public ProcessadorClassifierJobConfig(JobBuilderFactory jobBuilderFactory) {
         this.jobBuilderFactory = jobBuilderFactory;
     }
 
     @Bean
-    public Job processadorValidacaoJob(Step processadorValidacaoStep) {
+    public Job processadorClassifierJob(Step processadorClassifierStep) {
         return jobBuilderFactory
-                .get("processadorValidacaoJob")
-                .start(processadorValidacaoStep)
+                .get("processadorClassifierJob")
+                .start(processadorClassifierStep)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
