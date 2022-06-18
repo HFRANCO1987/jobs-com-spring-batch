@@ -21,9 +21,9 @@ public class ArquivoLarguraFixaJobConfig {
     @Bean
     public Job arquivoLarguraFixJob(Step leituraArquivoLarguraFixaStep){
         return this.jobBuilderFactory
-                .get("arquivoLarguraFixaJob")
+                .get("arquivoLarguraFixaEscritaDelimitedJob")
                 .start(leituraArquivoLarguraFixaStep)
-                //.incrementer(new RunIdIncrementer())
+                .incrementer(new RunIdIncrementer())
                 .build();
     }
 }

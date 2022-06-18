@@ -19,8 +19,8 @@ public class ArquivoLarguraFixaWriterConfig {
         return new FlatFileItemWriterBuilder<Cliente>()
                 .name("escritaArquivoLarguraFixaWriter")
                 .resource(resourceArquivoSaida)
-                .formatted()
-                .format("%-9s %-9s %-2s %-19s")
+                .delimited()
+                .delimiter(";")
                 .names("nome", "sobrenome", "idade", "email")
                 .build();
     }
