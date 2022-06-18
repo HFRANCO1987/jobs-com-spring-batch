@@ -1,4 +1,4 @@
-package com.springbatch.jdbccursorreaderjob.dominio;
+package com.springbatch.jdbcpagingreaderjob.dominio;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.springbatch.jdbccursorreaderjob;
+package com.springbatch.jdbcpagingreaderjob;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,11 +1,10 @@
-package com.springbatch.jdbccursorreaderjob.step;
+package com.springbatch.jdbcpagingreaderjob.step;
 
-import com.springbatch.jdbccursorreaderjob.dominio.Cliente;
+import com.springbatch.jdbcpagingreaderjob.dominio.Cliente;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.file.MultiResourceItemReader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,12 +19,12 @@ public class JdbcCursorStepConfig {
 
 
     @Bean
-    public Step jdbcCursorReaderStep(ItemReader<Cliente> jdbcCursorReader, ItemWriter<Cliente> jdbcCursorWriter) {
+    public Step jdbcCursorReaderStep(ItemReader<Cliente> jdbcPagingReader, ItemWriter<Cliente> jdbcPagingWriter) {
         return stepBuilderFactory
                 .get("jdbcCursorReaderStep")
                 .<Cliente, Cliente>chunk(1)
-                .reader(jdbcCursorReader)
-                .writer(jdbcCursorWriter)
+                .reader(jdbcPagingReader)
+                .writer(jdbcPagingWriter)
                 .build();
     }
 }

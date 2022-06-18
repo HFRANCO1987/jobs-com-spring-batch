@@ -1,4 +1,4 @@
-package com.springbatch.jdbccursorreaderjob.dominio;
+package com.springbatch.jdbcpagingreaderjob.dominio;
 
 public class Transacao {
 

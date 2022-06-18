@@ -1,4 +1,4 @@
-package com.springbatch.jdbccursorreaderjob.job;
+package com.springbatch.jdbcpagingreaderjob.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -19,10 +19,10 @@ public class JdbcCursorReaderJobConfig {
     }
 
     @Bean
-    public Job jdbcCursorReaderJob(Step leituraJdbcCursorStep){
+    public Job jdbcPagingJob(Step jdbcPagingReaderJob){
         return this.jobBuilderFactory
-                .get("jdbcCursorReaderJob")
-                .start(leituraJdbcCursorStep)
+                .get("jdbcPagingJob")
+                .start(jdbcPagingReaderJob)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }

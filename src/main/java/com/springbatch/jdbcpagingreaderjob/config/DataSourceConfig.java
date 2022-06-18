@@ -1,4 +1,4 @@
-package com.springbatch.jdbccursorreaderjob.config;
+package com.springbatch.jdbcpagingreaderjob.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;

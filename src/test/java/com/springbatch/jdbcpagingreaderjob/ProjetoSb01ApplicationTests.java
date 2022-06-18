@@ -1,4 +1,4 @@
-package com.springbatch.jdbccursorreaderjob;
+package com.springbatch.jdbcpagingreaderjob;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

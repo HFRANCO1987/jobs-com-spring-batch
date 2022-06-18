@@ -1,4 +1,4 @@
-package com.springbatch.jdbccursorreaderjob.writer;
+package com.springbatch.jdbcpagingreaderjob.writer;
 
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.context.annotation.Bean;
