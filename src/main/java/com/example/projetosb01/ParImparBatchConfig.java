@@ -52,7 +52,7 @@ public class ParImparBatchConfig {
     public Step imprimeParImparStep(){
         return stepBuilderFactory
                 .get("imprimeParImparStep")
-                .<Integer, String>chunk(1) //Ler Integer e escreve String, tamanho do chunck
+                .<Integer, String>chunk(10) //Ler Integer e escreve String, tamanho do chunck
                 .reader(contaAteDez())
                 .processor(parOuImparProcessor())
                 .writer(imprimeWriter())
