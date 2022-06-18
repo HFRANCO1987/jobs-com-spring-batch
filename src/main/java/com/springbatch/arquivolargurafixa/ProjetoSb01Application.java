@@ -1,4 +1,4 @@
-package com.example.projetosb01;
+package com.springbatch.arquivolargurafixa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

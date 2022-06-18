@@ -1,4 +1,4 @@
-package com.example.projetosb01;
+package com.springbatch.arquivolargurafixa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
