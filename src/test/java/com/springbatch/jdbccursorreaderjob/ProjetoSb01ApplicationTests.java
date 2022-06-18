@@ -1,4 +1,4 @@
-package com.springbatch.arquivomultiplosformatos;
+package com.springbatch.jdbccursorreaderjob;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

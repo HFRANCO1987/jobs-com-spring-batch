@@ -1,4 +1,4 @@
-package com.springbatch.arquivomultiplosformatos.job;
+package com.springbatch.jdbccursorreaderjob.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -10,19 +10,19 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class ArquivoMultiplosFormatosJobConfig {
+public class JdbcCursorReaderJobConfig {
 
     private JobBuilderFactory jobBuilderFactory;
 
-    public ArquivoMultiplosFormatosJobConfig(JobBuilderFactory jobBuilderFactory) {
+    public JdbcCursorReaderJobConfig(JobBuilderFactory jobBuilderFactory) {
         this.jobBuilderFactory = jobBuilderFactory;
     }
 
     @Bean
-    public Job arquivoMultiplosFormatosJob(Step leituraArquivoMultiplosFormatosStep){
+    public Job jdbcCursorReaderJob(Step leituraJdbcCursorStep){
         return this.jobBuilderFactory
-                .get("arquivoMultiplosFormatosJob01")
-                .start(leituraArquivoMultiplosFormatosStep)
+                .get("jdbcCursorReaderJob")
+                .start(leituraJdbcCursorStep)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }

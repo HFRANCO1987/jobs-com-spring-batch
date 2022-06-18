@@ -1,4 +1,4 @@
-package com.springbatch.arquivomultiplosformatos.dominio;
+package com.springbatch.jdbccursorreaderjob.dominio;
 
 import java.util.ArrayList;
 import java.util.List;

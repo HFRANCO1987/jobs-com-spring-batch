@@ -1,4 +1,4 @@
-package com.springbatch.arquivomultiplosformatos.dominio;
+package com.springbatch.jdbccursorreaderjob.dominio;
 
 public class Transacao {
 

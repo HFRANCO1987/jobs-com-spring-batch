@@ -1,4 +1,4 @@
-package com.springbatch.arquivomultiplosformatos;
+package com.springbatch.jdbccursorreaderjob;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
