@@ -54,4 +54,15 @@ public class Cliente {
     public void setTransacaoList(List<Transacao> transacaoList) {
         this.transacaoList = transacaoList;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nome='" + nome + '\'' +
+                ", sobrenome='" + sobrenome + '\'' +
+                ", idade='" + idade + '\'' +
+                ", email='" + email + '\'' +
+                ", transacaoList=" + transacaoList +
+                '}';
+    }
 }
