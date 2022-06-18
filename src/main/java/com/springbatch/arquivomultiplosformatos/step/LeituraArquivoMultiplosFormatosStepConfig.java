@@ -7,6 +7,7 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.batch.item.file.MultiResourceItemReader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,12 +21,14 @@ public class LeituraArquivoMultiplosFormatosStepConfig {
     }
 
     @Bean
-    public Step leituraArquivoMultiplosFormatosStep(FlatFileItemReader leituraArquivoMultiplosFormatosReader, ItemWriter leituraArquivoMultiplosFormatosWriter){
+    public Step leituraArquivoMultiplosFormatosStep(
+            MultiResourceItemReader<Cliente> leituraArquivoMultiplosFormatosReader, ItemWriter leituraArquivoMultiplosFormatosWriter){
         return this.stepBuilderFactory
                 .get("leituraArquivoMultiplosFormatosStep")
                 .chunk(1) //tamanho do chunck controle o número de transações
                 //.reader(leituraArquivoMultiplosFormatosReader)
-                .reader(new ArquivoClienteTransacaoReader(leituraArquivoMultiplosFormatosReader))
+                //.reader(new ArquivoClienteTransacaoReader(leituraArquivoMultiplosFormatosReader))
+                .reader(leituraArquivoMultiplosFormatosReader)
                 .writer(leituraArquivoMultiplosFormatosWriter)
                 .build();
     }
