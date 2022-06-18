@@ -19,7 +19,6 @@ import javax.sql.DataSource;
 @Configuration
 public class JdbcCursorReaderConfig {
 
-    @StepScope
     @Bean
     public JdbcCursorItemReader<Cliente> leituraJdbcCursorReader(@Qualifier("appDataSource") DataSource dataSource) {
         return new JdbcCursorItemReaderBuilder<Cliente>()

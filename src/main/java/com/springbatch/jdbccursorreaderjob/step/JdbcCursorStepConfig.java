@@ -3,6 +3,7 @@ package com.springbatch.jdbccursorreaderjob.step;
 import com.springbatch.jdbccursorreaderjob.dominio.Cliente;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.MultiResourceItemReader;
 import org.springframework.context.annotation.Bean;
@@ -17,16 +18,14 @@ public class JdbcCursorStepConfig {
         this.stepBuilderFactory = stepBuilderFactory;
     }
 
+
     @Bean
-    public Step leituraArquivoMultiplosFormatosStep(
-            MultiResourceItemReader<Cliente> leituraArquivoMultiplosFormatosReader, ItemWriter leituraArquivoMultiplosFormatosWriter){
-        return this.stepBuilderFactory
-                .get("leituraArquivoMultiplosFormatosStep")
-                .chunk(1) //tamanho do chunck controle o número de transações
-                //.reader(leituraArquivoMultiplosFormatosReader)
-                //.reader(new ArquivoClienteTransacaoReader(leituraArquivoMultiplosFormatosReader))
-                .reader(leituraArquivoMultiplosFormatosReader)
-                .writer(leituraArquivoMultiplosFormatosWriter)
+    public Step jdbcCursorReaderStep(ItemReader<Cliente> jdbcCursorReader, ItemWriter<Cliente> jdbcCursorWriter) {
+        return stepBuilderFactory
+                .get("jdbcCursorReaderStep")
+                .<Cliente, Cliente>chunk(1)
+                .reader(jdbcCursorReader)
+                .writer(jdbcCursorWriter)
                 .build();
     }
 }
